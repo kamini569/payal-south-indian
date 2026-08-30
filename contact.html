@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact | Payal South Indian</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --g:#031b13;
+    --g2:#082d20;
+    --gold:#e0b63d;
+    --gold2:#ffe08a;
+    --cream:#fff7df;
+    --muted:#bdb6a4
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+}
+
+html{
+    scroll-behavior:smooth
+}
+
+body{
+    font-family:"Noto Sans Gujarati",sans-serif;
+    background:var(--g);
+    color:var(--cream)
+}
+
+a{
+    text-decoration:none;
+    color:inherit
+}
+
+.container{
+    width:min(92%,1180px);
+    margin:auto
+}
+
+/* NAVBAR */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:99;
+    background:rgba(3,27,19,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #765e25
+}
+
+.nav{
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between
+}
+
+.logo{
+    display:flex;
+    gap:10px;
+    align-items:center
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--gold2)
+}
+
+.logo b{
+    font:27px "Cormorant Garamond"
+}
+
+.logo small{
+    display:block;
+    font-size:8px;
+    color:var(--gold2);
+    letter-spacing:2px
+}
+
+.nav-links{
+    display:flex;
+    gap:24px;
+    list-style:none
+}
+
+.nav-links a{
+    font-size:12px;
+    font-weight:700;
+    color:#ddd6c5
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--gold2)
+}
+
+.order-nav{
+    border:1px solid var(--gold);
+    padding:10px 16px;
+    border-radius:30px
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:1px solid var(--gold);
+    color:var(--gold2);
+    width:42px;
+    height:42px;
+    border-radius:7px;
+    font-size:21px
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:65px 20px 45px;
+    background:radial-gradient(
+        circle,
+        rgba(224,182,61,.12),
+        transparent 45%
+    )
+}
+
+.label{
+    color:var(--gold2);
+    letter-spacing:3px;
+    font-size:11px;
+    font-weight:700
+}
+
+.title{
+    font:clamp(42px,6vw,62px) "Cormorant Garamond";
+    margin-top:8px
+}
+
+.title span{
+    color:var(--gold2)
+}
+
+/* CONTACT */
+.section{
+    padding:60px 0
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:start
+}
+
+.info{
+    background:var(--g2);
+    border:1px solid rgba(224,182,61,.3);
+    padding:30px;
+    border-radius:8px
+}
+
+.info h2{
+    font:38px "Cormorant Garamond";
+    margin-top:5px
+}
+
+.info p{
+    color:var(--muted);
+    line-height:1.8;
+    margin-top:15px
+}
+
+.phone{
+    display:block;
+    padding:14px 0;
+    border-bottom:1px solid rgba(224,182,61,.15);
+    color:var(--cream);
+    margin-top:8px
+}
+
+.phone:hover{
+    color:var(--gold2)
+}
+
+/* BUTTONS */
+.contact-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:20px
+}
+
+.call-btn,
+.whatsapp-btn{
+    flex:1;
+    padding:12px 10px;
+    text-align:center;
+    font-size:12px;
+    font-weight:700;
+    border-radius:4px
+}
+
+.call-btn{
+    background:var(--gold);
+    color:var(--g)
+}
+
+.whatsapp-btn{
+    border:1px solid var(--gold);
+    color:var(--gold2)
+}
+
+.call-btn:hover{
+    background:var(--gold2)
+}
+
+.whatsapp-btn:hover{
+    background:rgba(224,182,61,.1)
+}
+
+/* FORM */
+form{
+    background:var(--g2);
+    border:1px solid rgba(224,182,61,.3);
+    padding:30px;
+    border-radius:8px
+}
+
+label{
+    display:block;
+    color:var(--gold2);
+    font-size:12px;
+    margin:15px 0 7px;
+    font-weight:700
+}
+
+input,
+textarea{
+    width:100%;
+    padding:13px;
+    background:var(--g);
+    border:1px solid rgba(224,182,61,.3);
+    color:var(--cream);
+    font:14px "Noto Sans Gujarati";
+    border-radius:4px;
+    outline:none
+}
+
+input:focus,
+textarea:focus{
+    border-color:var(--gold)
+}
+
+textarea{
+    height:120px;
+    resize:vertical
+}
+
+.submit{
+    width:100%;
+    border:0;
+    background:var(--gold);
+    color:var(--g);
+    padding:14px;
+    margin-top:22px;
+    font-weight:700;
+    cursor:pointer;
+    border-radius:4px
+}
+
+.submit:hover{
+    background:var(--gold2)
+}
+
+.success{
+    display:none;
+    margin-top:15px;
+    border:1px solid #58925d;
+    padding:12px;
+    color:#bde1c1;
+    line-height:1.7
+}
+
+/* IMAGE */
+.image{
+    margin-top:50px;
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    border:1px solid var(--gold);
+    padding:7px
+}
+
+/* FOOTER */
+footer{
+    background:#02140d;
+    border-top:1px solid #765e25;
+    padding:35px;
+    text-align:center;
+    color:#777;
+    font-size:11px
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    .nav-links{
+        position:absolute;
+        top:78px;
+        left:0;
+        right:0;
+        background:#031b13;
+        display:none;
+        flex-direction:column;
+        padding:15px 6%;
+        gap:0
+    }
+
+    .nav-links.open{
+        display:flex
+    }
+
+    .nav-links a{
+        display:block;
+        padding:13px 0
+    }
+
+    .menu-btn{
+        display:block
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+        gap:25px
+    }
+
+    .hero{
+        padding:50px 15px 35px
+    }
+
+    .title{
+        font-size:45px
+    }
+
+    .info h2{
+        font-size:34px
+    }
+
+    .contact-buttons{
+        flex-direction:column
+    }
+
+    .image{
+        margin-top:30px;
+        height:280px
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="container nav">
+
+<a href="index.html" class="logo">
+    <div class="logo-icon">❋</div>
+    <div>
+        <b>Payal</b>
+        <small>SOUTH INDIAN</small>
+    </div>
+</a>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html">HOME</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="about.html">ABOUT</a></li>
+<li><a href="services.html">SERVICES</a></li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a class="order-nav" href="order.html">ORDER NOW</a></li>
+<li><a class="active" href="contact.html">CONTACT</a></li>
+
+</ul>
+
+</div>
+</header>
+
+
+<section class="hero">
+
+<div class="label">PAYAL SOUTH INDIAN</div>
+
+<h1 class="title">
+    Get In <span>Touch</span>
+</h1>
+
+</section>
+
+
+<section class="section">
+
+<div class="container grid">
+
+<!-- CONTACT INFORMATION -->
+
+<div class="info">
+
+<div class="label">CONTACT</div>
+
+<h2>We'd Love To Hear From You.</h2>
+
+<p>
+For orders, party orders and enquiries,
+contact Payal South Indian.
+</p>
+
+<a class="phone" href="tel:9998033064">
+📞 9998033064
+</a>
+
+<a class="phone" href="tel:8141139200">
+📞 8141139200
+</a>
+
+<div class="contact-buttons">
+
+<a class="call-btn" href="tel:9998033064">
+📞 CALL NOW
+</a>
+
+<a
+class="whatsapp-btn"
+href="https://wa.me/919998033064?text=Hello%20Payal%20South%20Indian,%20I%20want%20to%20make%20an%20enquiry."
+target="_blank">
+💬 WHATSAPP
+</a>
+
+</div>
+
+<p style="margin-top:25px">
+📍 Payal South Indian
+</p>
+
+</div>
+
+
+<!-- CONTACT FORM -->
+
+<form id="contactForm">
+
+<div class="label">SEND MESSAGE</div>
+
+<label for="name">Name *</label>
+
+<input
+id="name"
+type="text"
+required
+placeholder="Enter your name"
+>
+
+
+<label for="phone">Mobile Number *</label>
+
+<input
+id="phone"
+type="tel"
+required
+maxlength="10"
+pattern="[0-9]{10}"
+placeholder="Enter 10 digit mobile number"
+>
+
+
+<label for="message">Message *</label>
+
+<textarea
+id="message"
+required
+placeholder="Write your message">
+</textarea>
+
+
+<button class="submit" type="submit">
+💬 SEND ON WHATSAPP
+</button>
+
+<div class="success" id="success">
+Your WhatsApp message is ready.
+</div>
+
+</form>
+
+</div>
+
+
+<div class="container">
+
+<img
+class="image"
+src="https://b.zmtcdn.com/data/dish_photos/bcc/cab5bdb31beca129ae4650d273d0dbcc.jpeg"
+alt="South Indian Food">
+
+</div>
+
+</section>
+
+
+<footer>
+© <span id="year"></span> Payal South Indian
+</footer>
+
+
+<script>
+
+const b = document.getElementById("menuBtn");
+const n = document.getElementById("navLinks");
+
+b.onclick = () => {
+    n.classList.toggle("open");
+};
+
+document.querySelectorAll(".nav-links a").forEach(a => {
+    a.onclick = () => {
+        n.classList.remove("open");
+    };
+});
+
+
+document.getElementById("contactForm").onsubmit = function(e){
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if(!/^[0-9]{10}$/.test(phone)){
+        alert("Please enter a valid 10 digit mobile number.");
+        return;
+    }
+
+    const whatsappMessage =
+        "Hello Payal South Indian,%0A%0A" +
+        "Name: " + encodeURIComponent(name) +
+        "%0AMobile: " + encodeURIComponent(phone) +
+        "%0AMessage: " + encodeURIComponent(message);
+
+    const whatsappURL =
+        "https://wa.me/919998033064?text=" + whatsappMessage;
+
+    document.getElementById("success").style.display = "block";
+
+    window.open(whatsappURL, "_blank");
+};
+
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>

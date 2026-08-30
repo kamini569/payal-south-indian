@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Party Orders | Payal South Indian</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--g:#063b23;--d:#021f12;--gold:#d5a72d;--gl:#f2cc58;--c:#fff8e9;--cd:#f4ead4}
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:"DM Sans";background:var(--c);color:var(--d)}a{text-decoration:none;color:inherit}.container{width:min(92%,1240px);margin:auto}
+.navbar{position:fixed;top:0;width:100%;height:78px;z-index:1000;background:#021f12f7;border-bottom:1px solid #d5a72d66}.nav-inner{height:100%;width:94%;max-width:1400px;margin:auto;display:flex;align-items:center;justify-content:space-between}.logo-gujarati{font-family:"Noto Sans Gujarati";color:var(--gl);font-size:22px;font-weight:700}.logo-english{color:#fff;font-family:"Cormorant Garamond";font-size:12px;letter-spacing:3px}.nav-links{display:flex;gap:27px}.nav-links a{font-size:12px;font-weight:600;color:#fff}.nav-right{display:flex;gap:12px;align-items:center}.cart{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center}.order{background:var(--gold);padding:12px 19px;font-size:11px;font-weight:700}.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:27px}.mobile-menu{display:none;position:fixed;top:78px;width:100%;background:var(--d);z-index:999;padding:25px}.mobile-menu.active{display:block}.mobile-menu a{display:block;color:#fff;padding:14px;border-bottom:1px solid #fff1}
+.hero{min-height:70vh;padding-top:78px;display:flex;align-items:center;background:linear-gradient(90deg,#021f12f5,#021f1270),url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2000&q=90") center/cover}.hero h1{font-family:"Noto Sans Gujarati";color:#fff;font-size:clamp(45px,7vw,80px)}.hero p{color:#fffbd;max-width:650px;line-height:1.8;margin:20px 0}.label{color:var(--gl);font-size:10px;font-weight:700;letter-spacing:3px}
+.section{padding:100px 0;background:var(--cd)}.heading{text-align:center;margin-bottom:50px}.heading h2{font-family:"Noto Sans Gujarati";font-size:clamp(35px,5vw,60px);color:var(--g)}.heading p{color:#756c60;margin-top:10px}.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.feature{background:white;padding:35px;text-align:center;border-top:3px solid var(--gold)}.feature .icon{font-size:40px}.feature h3{font-family:"Cormorant Garamond";font-size:30px;color:var(--g);margin:12px 0}.feature p{font-size:13px;color:#756c60;line-height:1.8}
+.form-section{padding:100px 0;background:var(--g)}.form-box{max-width:800px;margin:auto;background:white;padding:45px}.form-box h2{text-align:center;font-family:"Noto Sans Gujarati";font-size:42px;color:var(--g);margin-bottom:30px}.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{margin-bottom:18px}.field label{display:block;font-size:11px;font-weight:700;color:var(--g);margin-bottom:7px}.field input,.field textarea,.field select{width:100%;padding:14px;border:1px solid #d5a72d66;background:#fffaf0;font-family:inherit;outline:none}.field textarea{min-height:120px;resize:vertical}.submit{width:100%;padding:16px;border:0;background:var(--gold);color:var(--d);font-weight:700;cursor:pointer}.success{display:none;text-align:center;margin-top:20px;color:var(--g);font-weight:700}
+footer{padding:70px 0 25px;background:#01170d;color:#fff}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;padding-bottom:50px;border-bottom:1px solid #fff2}.footer-brand p{margin-top:18px;color:#fff9;max-width:300px;font-size:13px;line-height:1.8}.footer-title{color:var(--gl);font-size:11px;font-weight:700;letter-spacing:2px;margin-bottom:20px}.footer-column a{display:block;color:#fff9;font-size:13px;margin-bottom:12px}.footer-bottom{padding-top:25px;display:flex;justify-content:space-between;color:#fff6;font-size:11px}
+@media(max-width:900px){.nav-links,.nav-right{display:none}.menu-toggle{display:block}.features{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.navbar{height:70px}.mobile-menu{top:70px}.hero{padding-top:70px}.section,.form-section{padding:75px 0}.features,.row{grid-template-columns:1fr}.form-box{padding:28px}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:10px}}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="nav-inner">
+<a href="index.html"><div class="logo-gujarati">પાયલ</div><div class="logo-english">SOUTH INDIAN</div></a>
+<nav class="nav-links"><a href="index.html">HOME</a><a href="about.html">OUR STORY</a><a href="menu.html">MENU</a><a href="specials.html">SPECIALS</a><a href="gallery.html">GALLERY</a><a href="party-orders.html">PARTY ORDERS</a><a href="contact.html">CONTACT</a></nav>
+<div class="nav-right"><a href="order.html" class="cart">🛒</a><a href="order.html" class="order">ORDER NOW</a></div>
+<button class="menu-toggle">☰</button>
+</div>
+</header>
+
+<div class="mobile-menu">
+<a href="index.html">HOME</a><a href="about.html">OUR STORY</a><a href="menu.html">MENU</a><a href="specials.html">SPECIALS</a><a href="gallery.html">GALLERY</a><a href="party-orders.html">PARTY ORDERS</a><a href="contact.html">CONTACT</a><a href="location.html">LOCATION</a><a href="order.html">ORDER NOW</a>
+</div>
+
+<section class="hero">
+<div class="container">
+<div class="label">CELEBRATE WITH PAYAL</div>
+<h1>પાર્ટી ઓર્ડર</h1>
+<p>Birthday, family function, office event અથવા special occasion માટે delicious South Indian food.</p>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="heading">
+<div class="label" style="color:#d5a72d">FOR EVERY OCCASION</div>
+<h2>તમારી પાર્ટી માટે</h2>
+<p>Fresh food prepared according to your requirements.</p>
+</div>
+
+<div class="features">
+<div class="feature"><div class="icon">🎂</div><h3>Birthday</h3><p>Make your birthday celebration delicious with authentic South Indian food.</p></div>
+<div class="feature"><div class="icon">👨‍👩‍👧‍👦</div><h3>Family Function</h3><p>Perfect food options for family gatherings and special occasions.</p></div>
+<div class="feature"><div class="icon">🏢</div><h3>Office Events</h3><p>Bulk orders available for office meetings and events.</p></div>
+</div>
+</div>
+</section>
+
+<section class="form-section">
+<div class="container">
+<div class="form-box">
+<h2>પાર્ટી ઓર્ડર પૂછપરછ</h2>
+
+<form id="partyForm">
+<div class="row">
+<div class="field"><label>YOUR NAME</label><input id="name" required></div>
+<div class="field"><label>PHONE NUMBER</label><input id="phone" type="tel" required></div>
+</div>
+
+<div class="row">
+<div class="field"><label>EVENT TYPE</label><select id="event"><option>Birthday</option><option>Family Function</option><option>Office Event</option><option>Other</option></select></div>
+<div class="field"><label>NUMBER OF PEOPLE</label><input id="people" type="number" min="1" required></div>
+</div>
+
+<div class="field"><label>EVENT DATE</label><input id="date" type="date" required></div>
+<div class="field"><label>MESSAGE</label><textarea id="message" placeholder="Tell us about your requirement..."></textarea></div>
+
+<button class="submit">SEND PARTY ENQUIRY</button>
+<div class="success" id="success">✓ Your enquiry has been prepared. Please contact us to confirm.</div>
+</form>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand"><a href="index.html"><div class="logo-gujarati">પાયલ</div><div class="logo-english">SOUTH INDIAN</div></a><p>The Real Taste of South India. Authentic, fresh and delicious food prepared with care.</p></div>
+<div class="footer-column"><div class="footer-title">EXPLORE</div><a href="index.html">Home</a><a href="about.html">Our Story</a><a href="menu.html">Menu</a><a href="specials.html">Specials</a></div>
+<div class="footer-column"><div class="footer-title">QUICK LINKS</div><a href="gallery.html">Gallery</a><a href="order.html">Order Online</a><a href="location.html">Location</a><a href="contact.html">Contact</a></div>
+<div class="footer-column"><div class="footer-title">CONTACT</div><a href="tel:9998033064">9998033064</a><a href="tel:8141139200">8141139200</a><a href="https://wa.me/919998033064" target="_blank">WhatsApp</a></div>
+</div>
+<div class="footer-bottom"><span>© 2026 Payal South Indian. All Rights Reserved.</span><span>AUTHENTIC • FRESH • DELICIOUS</span></div>
+</div>
+</footer>
+
+<script>
+const t=document.querySelector(".menu-toggle"),m=document.querySelector(".mobile-menu");
+t.onclick=()=>{m.classList.toggle("active");t.textContent=m.classList.contains("active")?"✕":"☰"};
+
+document.getElementById("partyForm").addEventListener("submit",function(e){
+e.preventDefault();
+document.getElementById("success").style.display="block";
+});
+</script>
+
+</body>
+</html>

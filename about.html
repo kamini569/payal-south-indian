@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>About | Payal South Indian</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#031b13;--g2:#082d20;--gold:#e0b63d;--gold2:#ffe08a;--cream:#fff7df;--muted:#bdb6a4}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:"Noto Sans Gujarati";background:var(--g);color:var(--cream)}a{text-decoration:none;color:inherit}.container{width:min(92%,1180px);margin:auto}
+.navbar{position:sticky;top:0;z-index:99;background:rgba(3,27,19,.95);backdrop-filter:blur(12px);border-bottom:1px solid #765e25}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;align-items:center;gap:10px}.logo-icon{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2)}.logo b{font:27px "Cormorant Garamond"}.logo small{display:block;color:var(--gold2);font-size:8px;letter-spacing:2px}.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:12px;font-weight:700;color:#ddd6c5}.nav-links a:hover,.nav-links .active{color:var(--gold2)}.order-nav{border:1px solid var(--gold);padding:10px 16px;border-radius:30px}.menu-btn{display:none;background:none;border:1px solid var(--gold);color:var(--gold2);width:42px;height:42px;border-radius:7px;font-size:21px}
+.hero{text-align:center;padding:90px 20px;background:radial-gradient(circle,rgba(224,182,61,.12),transparent 45%)}.label{color:var(--gold2);letter-spacing:3px;font-size:12px;font-weight:700}.title{font:clamp(50px,7vw,78px) "Cormorant Garamond";margin-top:10px}.title span{color:var(--gold2)}
+.section{padding:90px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.image{border:1px solid var(--gold);padding:8px;height:540px;object-fit:cover}.text{color:var(--muted);line-height:1.9;margin-top:20px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:45px}.card{background:var(--g2);border:1px solid rgba(224,182,61,.3);padding:30px;text-align:center;border-radius:8px}.icon{font-size:35px}.card h3{font:30px "Cormorant Garamond";margin:12px}.card p{font-size:13px;color:var(--muted);line-height:1.7}.split{margin-top:80px}.split img{height:430px;width:100%;object-fit:cover;border:1px solid var(--gold);padding:7px}
+footer{background:#02140d;border-top:1px solid #765e25;padding:35px 0;text-align:center;color:#777;font-size:11px}
+@media(max-width:800px){.nav-links{position:absolute;top:78px;left:0;right:0;background:#031b13;display:none;flex-direction:column;padding:15px 6%;gap:0}.nav-links.open{display:flex}.nav-links a{display:block;padding:13px 0}.menu-btn{display:block}.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.image{height:400px}}
+</style>
+</head>
+<body>
+
+<header class="navbar"><div class="container nav">
+<a href="index.html" class="logo"><div class="logo-icon">❋</div><div><b>Payal</b><small>SOUTH INDIAN</small></div></a>
+<button class="menu-btn" id="menuBtn">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">HOME</a></li><li><a href="menu.html">MENU</a></li><li><a class="active" href="about.html">ABOUT</a></li><li><a href="services.html">SERVICES</a></li><li><a href="gallery.html">GALLERY</a></li><li><a class="order-nav" href="order.html">ORDER NOW</a></li><li><a href="contact.html">CONTACT</a></li>
+</ul></div></header>
+
+<section class="hero"><div class="label">ABOUT PAYAL</div><h1 class="title">The Taste of <span>South India</span></h1></section>
+
+<section class="section">
+<div class="container grid">
+<img class="image" src="https://blog.swiggy.com/wp-content/uploads/2024/02/Idli-Sambhar-1024x538.jpg" alt="ઈડલી સાંભાર">
+<div><div class="label">OUR STORY</div><h2 class="title">Authentic. <span>Fresh. Delicious.</span></h2>
+<p class="text">Traditional flavours, fresh ingredients and delicious food prepared with care.</p>
+<p class="text">Payal South Indian offers the dishes shown in our menu, from idli and vada to dosa and uttapa.</p></div>
+</div>
+</section>
+
+<section class="section" style="background:var(--g2)">
+<div class="container">
+<div class="label">OUR PROMISE</div>
+<h2 class="title">Made With <span>Care.</span></h2>
+<div class="cards">
+<div class="card"><div class="icon">🌿</div><h3>Fresh Ingredients</h3><p>Fresh ingredients are part of our food experience.</p></div>
+<div class="card"><div class="icon">👨‍🍳</div><h3>Quality Food</h3><p>Food prepared with attention to taste and quality.</p></div>
+<div class="card"><div class="icon">❤️</div><h3>Authentic Taste</h3><p>Traditional South Indian flavours in every dish.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container grid">
+<div><div class="label">FROM THE MENU</div><h2 class="title">South Indian <span>Favourites.</span></h2><p class="text">Explore the complete Payal South Indian menu and choose your favourite dish.</p><a href="menu.html" style="display:inline-block;margin-top:25px;background:var(--gold);color:var(--g);padding:13px 24px;font-weight:700">VIEW MENU →</a></div>
+<img class="image" src="https://myfoodstory.com/wp-content/uploads/2025/08/Mysore-Masala-Dosa-Recipe-3.jpg" alt="મૈસુર મસાલા ઢોસા">
+</div>
+</section>
+
+<footer>© <span id="year"></span> Payal South Indian</footer>
+<script>
+const b=document.getElementById("menuBtn"),n=document.getElementById("navLinks");b.onclick=()=>n.classList.toggle("open");document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>n.classList.remove("open"));document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

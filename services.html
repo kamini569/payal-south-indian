@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Services | Payal South Indian</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --g:#031b13;
+    --g2:#082d20;
+    --gold:#e0b63d;
+    --gold2:#ffe08a;
+    --cream:#fff7df;
+    --muted:#bdb6a4;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Noto Sans Gujarati",sans-serif;
+    background:var(--g);
+    color:var(--cream);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(92%,1180px);
+    margin:auto;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:99;
+    background:rgba(3,27,19,.95);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #765e25;
+}
+
+.nav{
+    height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.logo-icon{
+    width:42px;
+    height:42px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    color:var(--gold2);
+    font-size:20px;
+}
+
+.logo b{
+    font-family:"Cormorant Garamond";
+    font-size:27px;
+}
+
+.logo small{
+    display:block;
+    font-size:8px;
+    color:var(--gold2);
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:24px;
+    list-style:none;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:12px;
+    font-weight:700;
+    color:#ddd6c5;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+    color:var(--gold2);
+}
+
+.order-nav{
+    border:1px solid var(--gold);
+    padding:10px 16px;
+    border-radius:30px;
+}
+
+.menu-btn{
+    display:none;
+    background:none;
+    border:1px solid var(--gold);
+    color:var(--gold2);
+    width:42px;
+    height:42px;
+    border-radius:7px;
+    font-size:21px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:90px 20px;
+    background:radial-gradient(
+        circle,
+        rgba(224,182,61,.12),
+        transparent 45%
+    );
+}
+
+.label{
+    color:var(--gold2);
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:700;
+}
+
+.title{
+    font-family:"Cormorant Garamond";
+    font-size:clamp(50px,7vw,78px);
+    margin-top:10px;
+}
+
+.title span{
+    color:var(--gold2);
+}
+
+
+/* ================= SERVICES ================= */
+
+.section{
+    padding:70px 0;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    max-width:900px;
+    margin:auto;
+}
+
+.service{
+    background:var(--g2);
+    border:1px solid rgba(224,182,61,.3);
+    border-radius:8px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    border-color:var(--gold);
+}
+
+
+/* Smaller service image */
+
+.service img{
+    width:100%;
+    height:210px;
+    object-fit:cover;
+    display:block;
+}
+
+.body{
+    padding:18px;
+}
+
+.body h2{
+    font-family:"Cormorant Garamond";
+    font-size:28px;
+}
+
+.body p{
+    color:var(--muted);
+    line-height:1.6;
+    font-size:13px;
+    margin-top:6px;
+}
+
+.icon{
+    color:var(--gold2);
+    font-size:21px;
+}
+
+
+/* ================= PARTY ================= */
+
+.party{
+    max-width:900px;
+    margin:50px auto 0;
+    border:1px solid var(--gold);
+    text-align:center;
+    padding:45px 20px;
+}
+
+.party h2{
+    font-family:"Cormorant Garamond";
+    font-size:48px;
+    margin:10px;
+}
+
+.party p{
+    color:var(--muted);
+    margin:15px auto 25px;
+}
+
+.party a{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--g);
+    padding:13px 25px;
+    font-weight:700;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#02140d;
+    border-top:1px solid #765e25;
+    padding:35px;
+    text-align:center;
+    color:#777;
+    font-size:11px;
+}
+
+
+/* ================= TABLET ================= */
+
+@media(max-width:800px){
+
+    .nav-links{
+        position:absolute;
+        top:78px;
+        left:0;
+        right:0;
+        background:#031b13;
+        display:none;
+        flex-direction:column;
+        padding:15px 6%;
+        gap:0;
+        border-bottom:1px solid var(--gold);
+    }
+
+    .nav-links.open{
+        display:flex;
+    }
+
+    .nav-links a{
+        display:block;
+        padding:13px 0;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+        max-width:500px;
+    }
+
+    .service img{
+        height:220px;
+    }
+
+    .party{
+        max-width:500px;
+    }
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:550px){
+
+    .hero{
+        padding:65px 15px 45px;
+    }
+
+    .section{
+        padding:60px 0;
+    }
+
+    .services{
+        width:100%;
+    }
+
+    .service img{
+        height:200px;
+    }
+
+    .body{
+        padding:16px;
+    }
+
+    .body h2{
+        font-size:27px;
+    }
+
+    .party{
+        margin-top:40px;
+        padding:35px 15px;
+    }
+
+    .party h2{
+        font-size:40px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="container nav">
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-icon">❋</div>
+
+            <div>
+                <b>Payal</b>
+                <small>SOUTH INDIAN</small>
+            </div>
+
+        </a>
+
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="index.html">
+                    HOME
+                </a>
+            </li>
+
+            <li>
+                <a href="menu.html">
+                    MENU
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    ABOUT
+                </a>
+            </li>
+
+            <li>
+                <a class="active" href="services.html">
+                    SERVICES
+                </a>
+            </li>
+
+            <li>
+                <a href="gallery.html">
+                    GALLERY
+                </a>
+            </li>
+
+            <li>
+                <a class="order-nav" href="order.html">
+                    ORDER NOW
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    CONTACT
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="label">
+        PAYAL SOUTH INDIAN
+    </div>
+
+    <h1 class="title">
+        Our <span>Services</span>
+    </h1>
+
+</section>
+
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+
+        <div class="services">
+
+
+            <!-- DINE-IN -->
+
+            <div class="service">
+
+                <img
+                    src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/FOOD_CATALOG/IMAGES/CMS/2026/2/15/9ca2b85e-38e4-476f-a029-590301fe7ace_5386b398-cd2c-4d72-a404-8fda74f7b069.png"
+                    alt="મસાલા ઢોસા"
+                >
+
+                <div class="body">
+
+                    <div class="icon">
+                        🍽️
+                    </div>
+
+                    <h2>
+                        Dine-In
+                    </h2>
+
+                    <p>
+                        Enjoy fresh South Indian food at Payal South Indian.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TAKEAWAY -->
+
+            <div class="service">
+
+                <img
+                    src="https://blog.swiggy.com/wp-content/uploads/2024/02/Idli-Sambhar-1024x538.jpg"
+                    alt="ઈડલી સાંભાર"
+                >
+
+                <div class="body">
+
+                    <div class="icon">
+                        🥡
+                    </div>
+
+                    <h2>
+                        Takeaway
+                    </h2>
+
+                    <p>
+                        Choose your favourite dishes from our menu for takeaway.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PARTY ORDERS -->
+
+            <div class="service">
+
+                <img
+                    src="https://www.yummydosa.com/assets/uploads/Product/Image/1725614078_SPRING_ROLL_DOSA.jpg"
+                    alt="સ્પ્રિંગ રોલ ઢોસા"
+                >
+
+                <div class="body">
+
+                    <div class="icon">
+                        🎉
+                    </div>
+
+                    <h2>
+                        Party Orders
+                    </h2>
+
+                    <p>
+                        We accept party orders for special occasions and gatherings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CATERING -->
+
+            <div class="service">
+
+                <img
+                    src="https://b.zmtcdn.com/data/dish_photos/bcc/cab5bdb31beca129ae4650d273d0dbcc.jpeg"
+                    alt="ઓનિયન ટોમેટો ઉતપા"
+                >
+
+                <div class="body">
+
+                    <div class="icon">
+                        👨‍👩‍👧
+                    </div>
+
+                    <h2>
+                        Catering
+                    </h2>
+
+                    <p>
+                        South Indian food options for occasions and gatherings.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- ================= PARTY ORDERS ================= -->
+
+        <div class="party">
+
+            <div class="label">
+                PARTY ORDERS
+            </div>
+
+            <h2>
+                We Accept Party Orders
+            </h2>
+
+            <p>
+                Contact Payal South Indian for party orders.
+            </p>
+
+            <a href="order.html">
+                ORDER NOW →
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © <span id="year"></span>
+    Payal South Indian
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const btn = document.getElementById("menuBtn");
+const nav = document.getElementById("navLinks");
+
+btn.onclick = () => {
+    nav.classList.toggle("open");
+};
+
+document.querySelectorAll(".nav-links a").forEach(a => {
+
+    a.onclick = () => {
+        nav.classList.remove("open");
+    };
+
+});
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+
+</body>
+</html>

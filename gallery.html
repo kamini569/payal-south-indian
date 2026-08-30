@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gallery | Payal South Indian</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--g:#031b13;--g2:#082d20;--gold:#e0b63d;--gold2:#ffe08a;--cream:#fff7df}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"Noto Sans Gujarati";background:var(--g);color:var(--cream)}a{text-decoration:none;color:inherit}.container{width:min(92%,1180px);margin:auto}
+.navbar{position:sticky;top:0;z-index:99;background:rgba(3,27,19,.95);backdrop-filter:blur(12px);border-bottom:1px solid #765e25}.nav{height:78px;display:flex;align-items:center;justify-content:space-between}.logo{display:flex;gap:10px;align-items:center}.logo-icon{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2)}.logo b{font:27px "Cormorant Garamond"}.logo small{display:block;font-size:8px;color:var(--gold2);letter-spacing:2px}.nav-links{display:flex;gap:24px;list-style:none}.nav-links a{font-size:12px;font-weight:700;color:#ddd6c5}.nav-links a:hover,.nav-links .active{color:var(--gold2)}.order-nav{border:1px solid var(--gold);padding:10px 16px;border-radius:30px}.menu-btn{display:none;background:none;border:1px solid var(--gold);color:var(--gold2);width:42px;height:42px;border-radius:7px;font-size:21px}
+.hero{text-align:center;padding:90px 20px;background:radial-gradient(circle,rgba(224,182,61,.12),transparent 45%)}.label{color:var(--gold2);letter-spacing:3px;font-size:12px;font-weight:700}.title{font:clamp(50px,7vw,78px) "Cormorant Garamond";margin-top:10px}.title span{color:var(--gold2)}
+.gallery{padding:70px 0}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.photo{height:280px;overflow:hidden;border:1px solid rgba(224,182,61,.35);cursor:pointer;border-radius:5px}.photo img{width:100%;height:100%;object-fit:cover;transition:.5s}.photo:hover img{transform:scale(1.08)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:999;display:none;align-items:center;justify-content:center;padding:30px}.lightbox.open{display:flex}.lightbox img{max-width:95%;max-height:90%;width:auto;border:1px solid var(--gold)}.close{position:absolute;right:25px;top:20px;color:white;font-size:35px;cursor:pointer}
+footer{background:#02140d;border-top:1px solid #765e25;padding:35px;text-align:center;color:#777;font-size:11px}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:800px){.nav-links{position:absolute;top:78px;left:0;right:0;background:#031b13;display:none;flex-direction:column;padding:15px 6%;gap:0}.nav-links.open{display:flex}.nav-links a{display:block;padding:13px 0}.menu-btn{display:block}.grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:500px){.grid{grid-template-columns:1fr}.photo{height:300px}}
+</style>
+</head>
+<body>
+
+<header class="navbar"><div class="container nav">
+<a href="index.html" class="logo"><div class="logo-icon">❋</div><div><b>Payal</b><small>SOUTH INDIAN</small></div></a>
+<button class="menu-btn" id="menuBtn">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">HOME</a></li><li><a href="menu.html">MENU</a></li><li><a href="about.html">ABOUT</a></li><li><a href="services.html">SERVICES</a></li><li><a class="active" href="gallery.html">GALLERY</a></li><li><a class="order-nav" href="order.html">ORDER NOW</a></li><li><a href="contact.html">CONTACT</a></li>
+</ul></div></header>
+
+<section class="hero"><div class="label">PAYAL SOUTH INDIAN</div><h1 class="title">Food <span>Gallery</span></h1></section>
+
+<main class="gallery">
+<div class="container">
+<div class="grid">
+
+<div class="photo"><img src="https://blog.swiggy.com/wp-content/uploads/2024/02/Idli-Sambhar-1024x538.jpg" alt="ઈડલી સાંભાર"></div>
+<div class="photo"><img src="https://i0.wp.com/gomathirecipes.com/wp-content/uploads/2022/01/484.jpg?fit=800%2C1200&ssl=1" alt="મેદુવડા"></div>
+<div class="photo"><img src="https://vismaifood.com/storage/app/uploads/public/1f5/dcf/bb2/thumb__700_0_0_0_auto.jpg" alt="ઈડલી ફ્રાય"></div>
+<div class="photo"><img src="https://www.gyros.farm/cdn/shop/articles/masala-idli-fry-leftover-idli-recipe_d4b6da85-2547-475e-a1f9-0882294f4aef.png?v=1769587849&width=1500" alt="મસાલા ઈડલી"></div>
+
+<div class="photo"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/wuxfbnuzsmknbzvxprja" alt="સાદા ઢોસા"></div>
+<div class="photo"><img src="https://img.clevup.in/37407/1626084457365_SKU-0016_0.jpg?format=webp&width=600" alt="સાદામ મૈસુર’ ઢોસા"></div>
+<div class="photo"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/FOOD_CATALOG/IMAGES/CMS/2026/2/15/9ca2b85e-38e4-476f-a029-590301fe7ace_5386b398-cd2c-4d72-a404-8fda74f7b069.png" alt="મસાલા ઢોસા"></div>
+<div class="photo"><img src="https://myfoodstory.com/wp-content/uploads/2025/08/Mysore-Masala-Dosa-Recipe-3.jpg" alt="મૈસુર મસાલા ઢોસા"></div>
+
+<div class="photo"><img src="https://www.yummydosa.com/assets/uploads/Product/Image/1725614078_SPRING_ROLL_DOSA.jpg" alt="સ્પ્રિંગ રોલ ઢોસા"></div>
+<div class="photo"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/efkts7zfz9llrhp28jhm" alt="ઓનિયન ઢોસા"></div>
+<div class="photo"><img src="https://cdn.uengage.io/uploads/64296/image-1598-1758286071.png" alt="સાદા ઉતપા"></div>
+<div class="photo"><img src="https://www.foxcities.org/imager/files_idss_com/C159/9d5ca097-65b6-4a5e-92d2-c8241b271115_e45adf5f6bc0c5c2a30a39868f44eab6.jpg" alt="મસાલા ઉતપા"></div>
+
+<div class="photo"><img src="https://s3.us-east-2.amazonaws.com/pfimg1/013/27/96/2796b0793a756abc69388f043de4ffdc_1280m.jpg" alt="મૈસુર મસાલા ઉતપા"></div>
+<div class="photo"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/5a4fe2d3ad5955f024973e2a879e69a3" alt="મિક્સ ઉતપા"></div>
+<div class="photo"><img src="https://b.zmtcdn.com/data/dish_photos/bcc/cab5bdb31beca129ae4650d273d0dbcc.jpeg" alt="ઓનિયન ટોમેટો ઉતપા"></div>
+<div class="photo"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/wz8wovhqdqvggcminxn3" alt="ઓનિયન ઉતપા"></div>
+
+</div>
+</div>
+</main>
+
+<div class="lightbox" id="lightbox"><span class="close" id="close">×</span><img id="largeImage" src="" alt=""></div>
+
+<footer>© <span id="year"></span> Payal South Indian</footer>
+
+<script>
+const b=document.getElementById("menuBtn"),n=document.getElementById("navLinks");b.onclick=()=>n.classList.toggle("open");
+document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>n.classList.remove("open"));
+const box=document.getElementById("lightbox"),large=document.getElementById("largeImage");
+document.querySelectorAll(".photo img").forEach(img=>img.onclick=()=>{large.src=img.src;large.alt=img.alt;box.classList.add("open")});
+document.getElementById("close").onclick=()=>box.classList.remove("open");
+box.onclick=e=>{if(e.target===box)box.classList.remove("open")};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")box.classList.remove("open")});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

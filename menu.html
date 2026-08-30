@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Menu | Payal South Indian</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--g:#031b13;
+--g2:#082d20;
+--gold:#e0b63d;
+--gold2:#ffe08a;
+--cream:#fff7df;
+--muted:#bdb6a4
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box
+}
+
+html{
+scroll-behavior:smooth
+}
+
+body{
+font-family:"Noto Sans Gujarati",sans-serif;
+background:var(--g);
+color:var(--cream)
+}
+
+a{
+text-decoration:none;
+color:inherit
+}
+
+.container{
+width:min(92%,1180px);
+margin:auto
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(3,27,19,.95);
+backdrop-filter:blur(12px);
+border-bottom:1px solid #765e25
+}
+
+.nav{
+height:78px;
+display:flex;
+align-items:center;
+justify-content:space-between
+}
+
+.logo{
+display:flex;
+gap:10px;
+align-items:center
+}
+
+.logo-icon{
+width:42px;
+height:42px;
+border:1px solid var(--gold);
+border-radius:50%;
+display:grid;
+place-items:center;
+color:var(--gold2)
+}
+
+.logo b{
+font-family:"Cormorant Garamond";
+font-size:27px
+}
+
+.logo small{
+display:block;
+font-size:8px;
+letter-spacing:2px;
+color:var(--gold2)
+}
+
+.nav-links{
+display:flex;
+gap:24px;
+list-style:none
+}
+
+.nav-links a{
+font-size:12px;
+font-weight:700;
+color:#ddd6c5
+}
+
+.nav-links a:hover,
+.nav-links .active{
+color:var(--gold2)
+}
+
+.order-nav{
+border:1px solid var(--gold);
+padding:10px 16px;
+border-radius:30px
+}
+
+.menu-btn{
+display:none;
+background:none;
+border:1px solid var(--gold);
+color:var(--gold2);
+width:42px;
+height:42px;
+border-radius:7px;
+font-size:21px
+}
+
+/* PAGE HERO */
+
+.page-hero{
+text-align:center;
+padding:90px 20px 70px;
+background:radial-gradient(
+circle at center,
+rgba(224,182,61,.12),
+transparent 40%
+)
+}
+
+.label{
+color:var(--gold2);
+letter-spacing:3px;
+font-size:12px;
+font-weight:700
+}
+
+.title{
+font-family:"Cormorant Garamond";
+font-size:clamp(50px,7vw,78px);
+margin-top:12px
+}
+
+.title span{
+color:var(--gold2)
+}
+
+.sub{
+color:var(--muted);
+margin-top:15px
+}
+
+/* MENU */
+
+.section{
+padding:30px 0 90px
+}
+
+.category{
+font-family:"Cormorant Garamond";
+font-size:38px;
+color:var(--gold2);
+margin:50px 0 20px;
+border-bottom:1px solid rgba(224,182,61,.3);
+padding-bottom:10px
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px
+}
+
+.item{
+background:#082d20;
+border:1px solid rgba(224,182,61,.3);
+border-radius:9px;
+overflow:hidden;
+transition:.3s
+}
+
+.item:hover{
+transform:translateY(-6px);
+border-color:var(--gold)
+}
+
+/* SAME CARD IMAGE SIZE */
+.item img{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block
+}
+
+.body{
+padding:18px
+}
+
+.body h3{
+font-size:19px;
+line-height:1.5
+}
+
+.qty{
+color:var(--gold2);
+font-size:13px;
+margin-top:3px
+}
+
+.prices{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
+margin-top:15px
+}
+
+.price{
+border:1px solid rgba(224,182,61,.2);
+padding:8px;
+text-align:center
+}
+
+.price small{
+display:block;
+color:var(--muted);
+font-size:10px
+}
+
+.price b{
+font-size:17px
+}
+
+.item .btn{
+display:block;
+text-align:center;
+background:var(--gold);
+color:var(--g);
+padding:10px;
+margin-top:13px;
+border-radius:4px;
+font-size:11px;
+font-weight:700
+}
+
+/* UNLIMITED */
+
+.unlimited{
+margin-top:60px;
+border:1px solid var(--gold);
+padding:45px;
+text-align:center;
+background:rgba(224,182,61,.05)
+}
+
+.unlimited h2{
+font-family:"Cormorant Garamond";
+font-size:52px
+}
+
+.unlimited strong{
+font-size:40px;
+color:var(--gold2);
+display:block;
+margin:8px
+}
+
+/* FOOTER */
+
+footer{
+background:#02140d;
+border-top:1px solid #765e25;
+padding:45px 0 20px
+}
+
+.bottom{
+margin-top:30px;
+padding-top:15px;
+border-top:1px solid #183428;
+color:#777;
+font-size:11px;
+text-align:center
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.grid{
+grid-template-columns:repeat(3,1fr)
+}
+
+}
+
+@media(max-width:800px){
+
+.nav-links{
+position:absolute;
+top:78px;
+left:0;
+right:0;
+background:#031b13;
+display:none;
+flex-direction:column;
+padding:15px 6%;
+gap:0
+}
+
+.nav-links.open{
+display:flex
+}
+
+.nav-links a{
+display:block;
+padding:13px 0
+}
+
+.menu-btn{
+display:block
+}
+
+.grid{
+grid-template-columns:repeat(2,1fr)
+}
+
+}
+
+@media(max-width:550px){
+
+.grid{
+grid-template-columns:1fr
+}
+
+.page-hero{
+padding:65px 15px 45px
+}
+
+.section{
+padding-bottom:60px
+}
+
+.unlimited{
+padding:35px 15px
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+<div class="container nav">
+
+<a href="index.html" class="logo">
+
+<div class="logo-icon">❋</div>
+
+<div>
+<b>Payal</b>
+<small>SOUTH INDIAN</small>
+</div>
+
+</a>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li><a href="index.html">HOME</a></li>
+
+<li>
+<a class="active" href="menu.html">MENU</a>
+</li>
+
+<li>
+<a href="about.html">ABOUT</a>
+</li>
+
+<li>
+<a href="services.html">SERVICES</a>
+</li>
+
+<li>
+<a href="gallery.html">GALLERY</a>
+</li>
+
+<li>
+<a class="order-nav" href="order.html">ORDER NOW</a>
+</li>
+
+<li>
+<a href="contact.html">CONTACT</a>
+</li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+<!-- PAGE HERO -->
+
+<section class="page-hero">
+
+<div class="label">
+AUTHENTIC • FRESH • DELICIOUS
+</div>
+
+<h1 class="title">
+Our <span>Menu</span>
+</h1>
+
+<p class="sub">
+Payal South Indian
+</p>
+
+</section>
+
+
+<!-- MAIN MENU -->
+
+<main class="section">
+
+<div class="container">
+
+
+<!-- IDLI & VADA -->
+
+<h2 class="category">
+IDLI & VADA
+</h2>
+
+<div class="grid">
+
+
+<!-- IDLI SAMBHAR -->
+
+<article class="item">
+
+<img
+src="https://blog.swiggy.com/wp-content/uploads/2024/02/Idli-Sambhar-1024x538.jpg"
+alt="ઈડલી સાંભાર">
+
+<div class="body">
+
+<h3>ઈડલી સાંભાર</h3>
+
+<div class="qty">
+(3 નંગ)
+</div>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹30</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>—</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=ઇડલી%20સાંભાર">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MEDU VADA -->
+
+<article class="item">
+
+<img
+src="https://i0.wp.com/gomathirecipes.com/wp-content/uploads/2022/01/484.jpg?fit=800%2C1200&ssl=1"
+alt="મેદુવડા">
+
+<div class="body">
+
+<h3>મેદુવડા</h3>
+
+<div class="qty">
+(3 નંગ)
+</div>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹40</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>—</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=મેદુવડા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- IDLI FRY -->
+
+<article class="item">
+
+<img
+src="https://vismaifood.com/storage/app/uploads/public/1f5/dcf/bb2/thumb__700_0_0_0_auto.jpg"
+alt="ઈડલી ફ્રાય">
+
+<div class="body">
+
+<h3>ઈડલી ફ્રાય</h3>
+
+<div class="qty">
+(3 નંગ)
+</div>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹50</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹70</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=ઈડલી%20ફ્રાય">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MASALA IDLI -->
+
+<article class="item">
+
+<img
+src="https://www.gyros.farm/cdn/shop/articles/masala-idli-fry-leftover-idli-recipe_d4b6da85-2547-475e-a1f9-0882294f4aef.png?v=1769587849&width=1500"
+alt="મસાલા ઈડલી">
+
+<div class="body">
+
+<h3>મસાલા ઈડલી</h3>
+
+<div class="qty">
+(4 નંગ)
+</div>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹80</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹90</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=મસાલા%20ઈડલી">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+
+<!-- DOSAS -->
+
+<h2 class="category">
+DOSAS
+</h2>
+
+<div class="grid">
+
+
+<!-- SADA DOSA -->
+
+<article class="item">
+
+<div class="photo"><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/wuxfbnuzsmknbzvxprja" alt="સાદા ઢોસા"></div>
+<div class="body">
+
+<h3>સાદા ઢોસા</h3>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹50</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹70</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=સાદા%20ઢોસા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MYSORE PLAIN DOSA -->
+
+<article class="item">
+
+<img src="https://dosaexpressbd.com/wp-content/uploads/2022/11/MYSORE-PLAIN-DOSA.jpg" alt="સાદામ મૈસુર ઢોસા">
+<div class="body">
+<h3>સાદા મૈસુર ઢોસા</h3>
+
+<div class="prices">
+
+<div class="price">
+
+<small>OIL</small>
+
+<b>₹60</b>
+
+</div>
+
+<div class="price">
+
+<small>BUTTER</small>
+
+<b>₹80</b>
+
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=સાદામ%20મૈસુર%20ઢોસા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MASALA DOSA -->
+
+<article class="item">
+
+<img
+src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/FOOD_CATALOG/IMAGES/CMS/2026/3/3/849badca-ef8a-43e0-9ffc-ea68a1191dba_7f0702a2-37cb-4db8-9b32-d2db523d4109.jpg_compressed"
+alt="મસાલા ઢોસા">
+
+<div class="body">
+
+<h3>મસાલા ઢોસા</h3>
+
+<div class="prices">
+
+<div class="price">
+
+<small>OIL</small>
+
+<b>₹60</b>
+
+</div>
+
+<div class="price">
+
+<small>BUTTER</small>
+
+<b>₹80</b>
+
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=મસાલા%20ઢોસા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MYSORE MASALA DOSA -->
+
+<article class="item">
+
+<img
+src="https://snapcalorie-webflow-website.s3.us-east-2.amazonaws.com/media/food_pics_v2/medium/mysore_masala_dosa.jpg"
+alt="મૈસુર મસાલા ઢોસા">
+
+<div class="body">
+
+<h3>મૈસુર મસાલા ઢોસા</h3>
+
+<div class="prices">
+
+<div class="price">
+
+<small>OIL</small>
+
+<b>₹70</b>
+
+</div>
+
+<div class="price">
+
+<small>BUTTER</small>
+
+<b>₹90</b>
+
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=મૈસુર%20મસાલા%20ઢોસા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- SPRING ROLL DOSA -->
+
+<article class="item">
+
+<img src="https://www.yummydosa.com/assets/uploads/Product/Image/1725614078_SPRING_ROLL_DOSA.jpg" alt="સ્પ્રિંગ રોલ ઢોસા">
+<div class="body">
+
+<h3>સ્પ્રિંગ રોલ ઢોસા</h3>
+
+<div class="prices">
+
+<div class="price">
+
+<small>OIL</small>
+
+<b>₹80</b>
+
+</div>
+
+<div class="price">
+
+<small>BUTTER</small>
+
+<b>₹100</b>
+
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=સ્પ્રિંગ%20રોલ%20ઢોસા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- ONION DOSA -->
+
+<article class="item">
+
+<img
+src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/efkts7zfz9llrhp28jhm"
+alt="ઓનિયન ઢોસા">
+
+<div class="body">
+
+<h3>ઓનિયન ઢોસા</h3>
+
+<div class="prices">
+
+<div class="price">
+
+<small>OIL</small>
+
+<b>₹80</b>
+
+</div>
+
+<div class="price">
+
+<small>BUTTER</small>
+
+<b>₹100</b>
+
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=ઓનિયન%20ઢોસા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+
+<!-- UTTAPAS -->
+
+<h2 class="category">
+UTTAPAS
+</h2>
+
+<div class="grid">
+
+
+<!-- PLAIN UTTAPA -->
+
+<article class="item">
+
+<img
+src="https://cdn.uengage.io/uploads/64296/image-1598-1758286071.png"
+alt="સાદા ઉતપા">
+
+<div class="body">
+
+<h3>સાદા ઉતપા</h3>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹70</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹90</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=સાદા%20ઉતપા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MASALA UTTAPA -->
+
+<article class="item">
+
+<img
+src="https://www.foxcities.org/imager/files_idss_com/C159/9d5ca097-65b6-4a5e-92d2-c8241b271115_e45adf5f6bc0c5c2a30a39868f44eab6.jpg"
+alt="મસાલા ઉતપા">
+
+<div class="body">
+
+<h3>મસાલા ઉતપા</h3>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹90</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹110</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=મસાલા%20ઉતપા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MYSORE MASALA UTTAPA -->
+
+<article class="item">
+
+<img
+src="https://s3.us-east-2.amazonaws.com/pfimg1/013/27/96/2796b0793a756abc69388f043de4ffdc_1280m.jpg"
+alt="મૈસુર મસાલા ઉતપા">
+
+<div class="body">
+
+<h3>મૈસુર મસાલા ઉતપા</h3>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹100</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹120</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=મૈસુર%20મસાલા%20ઉતપા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- MIX UTTAPA -->
+
+<article class="item">
+
+<img
+src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/5a4fe2d3ad5955f024973e2a879e69a3"
+alt="મિક્સ ઉતપા">
+
+<div class="body">
+
+<h3>મિક્સ ઉતપા</h3>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹100</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹120</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=મિક્સ%20ઉતપા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- ONION TOMATO UTTAPA -->
+
+<article class="item">
+
+<img
+src="https://b.zmtcdn.com/data/dish_photos/bcc/cab5bdb31beca129ae4650d273d0dbcc.jpeg"
+alt="ઓનિયન ટોમેટો ઉતપા">
+
+<div class="body">
+
+<h3>ઓનિયન ટોમેટો ઉતપા</h3>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹100</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹120</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=ઓનિયન%20ટોમેટો%20ઉતપા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+
+<!-- ONION UTTAPA -->
+
+<article class="item">
+
+<img
+src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/wz8wovhqdqvggcminxn3"
+alt="ઓનિયન ઉતપા">
+
+<div class="body">
+
+<h3>ઓનિયન ઉતપા</h3>
+
+<div class="prices">
+
+<div class="price">
+<small>OIL</small>
+<b>₹100</b>
+</div>
+
+<div class="price">
+<small>BUTTER</small>
+<b>₹120</b>
+</div>
+
+</div>
+
+<a class="btn"
+href="order.html?item=ઓનિયન%20ઉતપા">
+ORDER
+</a>
+
+</div>
+
+</article>
+
+</div>
+
+
+<!-- UNLIMITED -->
+
+<div class="unlimited">
+
+<div class="label">
+SPECIAL
+</div>
+
+<h2>
+ 1 PERSON • UNLIMITED
+</h2>
+
+<strong>
+₹150/-
+</strong>
+
+<a
+class="btn"
+style="background:var(--gold);color:var(--g);display:inline-block"
+href="order.html?item=1%20PERSON%20UNLIMITED">
+ORDER NOW
+</a>
+
+</div>
+
+</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="bottom">
+
+© <span id="year"></span>
+Payal South Indian • Authentic • Fresh • Delicious
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+const btn = document.getElementById("menuBtn");
+const nav = document.getElementById("navLinks");
+
+btn.onclick = () => nav.classList.toggle("open");
+
+document.querySelectorAll(".nav-links a").forEach(
+a => a.onclick = () => nav.classList.remove("open")
+);
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Payal South Indian | Authentic South Indian Taste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Gujarati:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--green:#031b13;--green2:#082d20;--green3:#0d3b29;
+--gold:#e0b63d;--gold2:#ffe08a;--cream:#fff7df;
+--muted:#bdb6a4;--brown:#24170e;--border:#b58b27;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans Gujarati",sans-serif;background:var(--green);color:var(--cream);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
+.container{width:min(92%,1180px);margin:auto}
+.navbar{position:sticky;top:0;z-index:1000;background:rgba(3,27,19,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(224,182,61,.3)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:12px}
+.logo-icon{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold2);font-size:23px}
+.logo b{font-family:"Cormorant Garamond";font-size:27px;line-height:.8}
+.logo small{display:block;color:var(--gold2);font-size:8px;letter-spacing:2px;margin-top:6px}
+.nav-links{display:flex;gap:25px;align-items:center;list-style:none}
+.nav-links a{font-size:12px;font-weight:700;letter-spacing:.8px;color:#ddd6c5;transition:.3s}
+.nav-links a:hover,.nav-links .active{color:var(--gold2)}
+.order-nav{border:1px solid var(--gold);padding:10px 17px;border-radius:30px}
+.menu-btn{display:none;background:none;border:1px solid var(--gold);color:var(--gold2);width:42px;height:42px;border-radius:7px;font-size:22px}
+.hero{min-height:calc(100vh - 78px);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,18,12,.97) 0%,rgba(2,24,16,.88) 42%,rgba(2,24,16,.42) 100%),url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/FOOD_CATALOG/IMAGES/CMS/2026/2/15/9ca2b85e-38e4-476f-a029-590301fe7ace_5386b398-cd2c-4d72-a404-8fda74f7b069.png") center/cover}
+.hero:after{content:"";position:absolute;inset:12px;border:1px solid rgba(224,182,61,.55);pointer-events:none}
+.hero-content{position:relative;z-index:2;width:min(92%,1180px);margin:auto;padding:80px 0}
+.kicker{color:var(--gold2);letter-spacing:4px;font-size:14px;font-weight:700;margin-bottom:20px}
+.hero h1{font-family:"Noto Sans Gujarati";font-size:clamp(52px,8vw,105px);line-height:1.02;font-weight:700}
+.hero h1 span{display:block;color:var(--gold2)}
+.tagline{font-family:"Cormorant Garamond";font-size:clamp(30px,4vw,47px);margin-top:25px;letter-spacing:.5px}
+.gujarati-tag{font-size:clamp(20px,2.5vw,30px);color:#eee5cd;margin-top:5px}
+.hero p{max-width:650px;color:#c8c1af;line-height:1.8;margin-top:18px;font-size:15px}
+.buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 25px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:1px;transition:.3s}
+.primary{background:var(--gold);color:var(--green)}
+.primary:hover{background:var(--gold2);transform:translateY(-3px)}
+.outline{border:1px solid var(--gold);color:var(--cream)}
+.outline:hover{background:var(--gold);color:var(--green);transform:translateY(-3px)}
+.phones{display:flex;gap:25px;margin-top:27px;color:#ddd6c5;font-size:14px;flex-wrap:wrap}
+.section{padding:90px 0}
+.dark{background:var(--green2)}
+.brown{background:var(--brown)}
+.label{color:var(--gold2);font-size:12px;letter-spacing:3px;font-weight:700}
+.title{font-family:"Cormorant Garamond";font-size:clamp(45px,6vw,70px);line-height:.95;margin-top:12px}
+.title span{color:var(--gold2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.about-img{height:520px;object-fit:cover;border:1px solid var(--gold);padding:8px}
+.text{color:var(--muted);line-height:1.9;margin-top:22px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:45px}
+.card{background:rgba(255,255,255,.035);border:1px solid rgba(224,182,61,.3);border-radius:8px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-7px);border-color:var(--gold)}
+.card img{height:260px;object-fit:cover}
+.card-body{padding:22px}
+.card h3{font-family:"Cormorant Garamond";font-size:29px}
+.card p{color:var(--muted);font-size:13px;line-height:1.7;margin-top:7px}
+.center{text-align:center}
+.party{background:linear-gradient(rgba(3,27,19,.92),rgba(3,27,19,.92)),url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/FOOD_CATALOG/IMAGES/CMS/2026/2/15/9ca2b85e-38e4-476f-a029-590301fe7ace_5386b398-cd2c-4d72-a404-8fda74f7b069.png") center/cover;padding:80px 20px;text-align:center;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold)}
+.party h2{font-family:"Cormorant Garamond";font-size:60px;margin:10px}
+.party p{color:var(--muted);max-width:600px;margin:15px auto 25px;line-height:1.8}
+footer{background:#02140d;border-top:1px solid rgba(224,182,61,.25);padding:50px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px}
+footer h3{color:var(--gold2);font-size:13px;letter-spacing:2px;margin-bottom:18px}
+footer p,footer a{color:var(--muted);font-size:13px;line-height:2}
+.bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:35px;padding-top:18px;color:#777;font-size:11px;display:flex;justify-content:space-between}
+@media(max-width:850px){
+.nav-links{position:absolute;top:78px;left:0;right:0;background:#031b13;display:none;flex-direction:column;align-items:stretch;padding:15px 6%;gap:0;border-bottom:1px solid var(--gold)}
+.nav-links.open{display:flex}.nav-links a{display:block;padding:14px 0}.order-nav{text-align:center}.menu-btn{display:block}
+.about-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+.hero{min-height:700px}.hero-content{padding:60px 0}.kicker{font-size:10px;letter-spacing:2px}
+.hero h1{font-size:52px}.tagline{font-size:31px}.gujarati-tag{font-size:19px}.hero p{font-size:13px}
+.buttons{flex-direction:column}.btn{width:100%}.cards{grid-template-columns:1fr}.section{padding:70px 0}
+.about-img{height:400px}.party h2{font-size:43px}.footer-grid{grid-template-columns:1fr}.bottom{flex-direction:column;gap:8px;text-align:center}
+}
+</style>
+</head>
+
+<body>
+
+<header class="navbar">
+<div class="container nav">
+<a href="index.html" class="logo">
+<div class="logo-icon">❋</div>
+<div><b>Payal</b><small>SOUTH INDIAN</small></div>
+</a>
+
+<button class="menu-btn" id="menuBtn">☰</button>
+
+<ul class="nav-links" id="navLinks">
+<li><a class="active" href="index.html">HOME</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="about.html">ABOUT</a></li>
+<li><a href="services.html">SERVICES</a></li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a class="order-nav" href="order.html">ORDER NOW</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+</div>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-content">
+<div class="kicker">AUTHENTIC • FRESH • DELICIOUS</div>
+
+<h1>
+પાયલ
+<span>સાઉથ ઇન્ડિયન</span>
+</h1>
+
+<div class="tagline">The Real Taste of South India</div>
+<div class="gujarati-tag">દક્ષિણ ભારતના અસલી સ્વાદનો અનુભવ.</div>
+
+<p>
+Traditional flavours, fresh ingredients and delicious food prepared with care.
+</p>
+
+<div class="buttons">
+<a class="btn primary" href="menu.html">VIEW MENU →</a>
+<a class="btn outline" href="order.html">ORDER NOW →</a>
+</div>
+
+<div class="phones">
+<a href="tel:9998033064">📞 9998033064</a>
+<a href="tel:8141139200">📞 8141139200</a>
+</div>
+</div>
+</section>
+
+<section class="section dark">
+<div class="container about-grid">
+<img class="about-img" src="https://blog.swiggy.com/wp-content/uploads/2024/02/Idli-Sambhar-1024x538.jpg" alt="ઈડલી સાંભાર">
+<div>
+<div class="label">ABOUT PAYAL</div>
+<h2 class="title">The Taste of <span>South India.</span></h2>
+<p class="text">
+Payal South Indian brings together traditional South Indian flavours,
+fresh ingredients and delicious food prepared with care.
+</p>
+<p class="text">
+Explore the menu and discover the dishes available at Payal South Indian.
+</p>
+<a class="btn outline" href="about.html" style="margin-top:25px">READ MORE →</a>
+</div>
+</div>
+</section>
+
+<section class="section brown">
+<div class="container center">
+<div class="label">WHY CHOOSE PAYAL?</div>
+<h2 class="title">Authentic <span>Taste.</span></h2>
+
+<div class="cards">
+<div class="card">
+<img src="https://www.vegandietfood.com/wp-content/uploads/2021/12/Tadka-Idli-Recipe.jpg" alt="ઈડલી ફ્રાય">
+<div class="card-body"><h3>Fresh</h3><p>Fresh ingredients and carefully prepared South Indian food.</p></div>
+</div>
+
+<div class="card">
+<img src="https://cookwithdi.com/wp-content/uploads/2024/10/IMG_1462photo-full.jpg" alt="મેદુવડા">
+<div class="card-body"><h3>Quality</h3><p>Food prepared with attention to taste and quality.</p></div>
+</div>
+
+<div class="card">
+<img src="https://s3.us-east-2.amazonaws.com/pfimg1/013/27/96/2796b0793a756abc69388f043de4ffdc_1280m.jpg" alt="ઉતપા">
+<div class="card-body"><h3>Delicious</h3><p>Traditional flavours served for a memorable experience.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section dark">
+<div class="container center">
+<div class="label">FEATURED SPECIALS</div>
+<h2 class="title">From Our <span>Menu.</span></h2>
+
+<div class="cards">
+<div class="card">
+<img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy%2Cf_auto%2Cq_auto/FOOD_CATALOG/IMAGES/CMS/2026/2/15/9ca2b85e-38e4-476f-a029-590301fe7ace_5386b398-cd2c-4d72-a404-8fda74f7b069.png" alt="મસાલા ઢોસા">
+<div class="card-body"><h3>મસાલા ઢોસા</h3></div>
+</div>
+
+<div class="card">
+<img src="https://www.gyros.farm/cdn/shop/articles/masala-idli-fry-leftover-idli-recipe_d4b6da85-2547-475e-a1f9-0882294f4aef.png?v=1769587849&width=1500" alt="ઈડલી ફ્રાય">
+<div class="card-body"><h3>ઈડલી ફ્રાય</h3></div>
+</div>
+
+<div class="card">
+<img src="https://b.zmtcdn.com/data/dish_photos/bcc/cab5bdb31beca129ae4650d273d0dbcc.jpeg" alt="ઓનિયન ટોમેટો ઉતપા">
+<div class="card-body"><h3>ઓનિયન ટોમેટો ઉતપા</h3></div>
+</div>
+</div>
+
+<a class="btn primary" href="menu.html" style="margin-top:40px">VIEW FULL MENU →</a>
+</div>
+</section>
+
+<section class="party">
+<div class="container">
+<div class="label">SPECIAL OCCASIONS</div>
+<h2>We Accept Party Orders</h2>
+<p>Planning a gathering or special occasion? Payal South Indian accepts party orders.</p>
+<a class="btn primary" href="order.html">ORDER NOW →</a>
+</div>
+</section>
+
+<section class="section dark">
+<div class="container center">
+<div class="label">GET IN TOUCH</div>
+<h2 class="title">Contact <span>Payal.</span></h2>
+<p class="text">For orders and enquiries, contact us directly.</p>
+<div class="phones" style="justify-content:center;margin-top:25px">
+<a href="tel:9998033064">📞 9998033064</a>
+<a href="tel:8141139200">📞 8141139200</a>
+</div>
+<a class="btn outline" href="contact.html" style="margin-top:30px">CONTACT US →</a>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div><div class="logo"><div class="logo-icon">❋</div><div><b>Payal</b><small>SOUTH INDIAN</small></div></div><p>AUTHENTIC • FRESH • DELICIOUS</p></div>
+<div><h3>QUICK LINKS</h3><a href="menu.html">Menu</a><br><a href="about.html">About</a><br><a href="services.html">Services</a><br><a href="gallery.html">Gallery</a></div>
+<div><h3>CONTACT</h3><a href="tel:9998033064">9998033064</a><br><a href="tel:8141139200">8141139200</a></div>
+</div>
+<div class="bottom"><span>© <span id="year"></span> Payal South Indian</span><span>Authentic • Fresh • Delicious</span></div>
+</div>
+</footer>
+
+<script>
+const btn=document.getElementById("menuBtn"),nav=document.getElementById("navLinks");
+btn.onclick=()=>nav.classList.toggle("open");
+document.querySelectorAll(".nav-links a").forEach(a=>a.onclick=()=>nav.classList.remove("open"));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
