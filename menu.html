@@ -26,7 +26,7 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%}
 body{
   font-family:"Noto Sans Gujarati",sans-serif;
   background:var(--g);
@@ -34,6 +34,9 @@ body{
   line-height:1.55;
   -webkit-font-smoothing:antialiased;
   padding-bottom:64px; /* room for the fixed mobile action bar */
+  overflow-x:hidden;
+  width:100%;
+  position:relative;
 }
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
@@ -42,7 +45,7 @@ button{font-family:inherit}
 
 /* ============ NAVBAR ============ */
 .navbar{
-  position:sticky;top:0;z-index:1000;
+  position:sticky;top:0;z-index:1002; /* must stay above .nav-overlay or the drawer's links become unclickable */
   background:rgba(3,27,19,.96);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(224,182,61,.3);
@@ -63,14 +66,16 @@ button{font-family:inherit}
 
 /* mobile nav = slide-in drawer */
 .nav-links{
-  position:fixed;top:0;right:-85%;height:100dvh;width:min(80%,320px);
+  position:fixed;top:0;right:0;height:100dvh;width:min(80%,320px);
+  transform:translateX(105%);
   background:linear-gradient(180deg,#052015,#031b13);
   border-left:1px solid rgba(224,182,61,.35);
   list-style:none;display:flex;flex-direction:column;
   padding:calc(var(--nav-h) + 24px) 26px 30px;gap:2px;
-  transition:right .35s ease;z-index:1001;overflow-y:auto;
+  transition:transform .3s ease;z-index:1003;overflow-y:auto;
+  pointer-events:none;
 }
-.nav-links.open{right:0}
+.nav-links.open{transform:translateX(0);pointer-events:auto}
 .nav-links a{
   display:block;padding:15px 2px;font-size:14.5px;font-weight:700;
   letter-spacing:.5px;color:#ddd6c5;border-bottom:1px solid rgba(224,182,61,.1);
@@ -83,8 +88,9 @@ button{font-family:inherit}
 .nav-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,.55);
   opacity:0;visibility:hidden;transition:opacity .3s;z-index:1000;
+  pointer-events:none;
 }
-.nav-overlay.open{opacity:1;visibility:visible}
+.nav-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
 
 @media(min-width:900px){
   :root{--nav-h:78px}
@@ -93,7 +99,7 @@ button{font-family:inherit}
   .nav-overlay{display:none}
   .nav-links{
     position:static;height:auto;width:auto;flex-direction:row;align-items:center;
-    background:none;border:0;padding:0;gap:25px;transition:none;
+    background:none;border:0;padding:0;gap:25px;transition:none;transform:none;pointer-events:auto;
   }
   .nav-links a{padding:0;border:0}
   .order-nav{margin-top:0;padding:10px 17px}
@@ -138,18 +144,16 @@ button{font-family:inherit}
 
 /* ============ BUTTONS ============ */
 .btn{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  padding:14px 20px;border-radius:6px;font-size:12.5px;font-weight:700;
-  letter-spacing:.4px;width:100%;transition:.25s;min-height:44px;
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  padding:9px 15px;border-radius:6px;font-size:10.5px;font-weight:700;
+  letter-spacing:.3px;width:auto;transition:.25s;min-height:36px;white-space:nowrap;
 }
 .primary{background:var(--gold);color:var(--g)}
 .primary:hover{background:var(--gold2)}
 .outline{border:1px solid var(--gold);color:var(--cream)}
 .outline:hover{background:var(--gold);color:var(--g)}
-@media(min-width:600px){.btn{width:auto;display:inline-flex}}
 
-.buttons{display:flex;flex-direction:column;gap:10px;margin-top:24px}
-@media(min-width:600px){.buttons{flex-direction:row;flex-wrap:wrap}}
+.buttons{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;margin-top:20px}
 
 .phones{display:flex;flex-direction:column;gap:8px;margin-top:18px;color:#ddd6c5;font-size:13px}
 @media(min-width:600px){.phones{flex-direction:row;gap:22px}}
@@ -161,11 +165,16 @@ button{font-family:inherit}
 .center{text-align:center}
 
 /* image + text split (about-style) used on home + about pages */
-.about-grid{display:grid;grid-template-columns:1fr;gap:26px}
-.about-img{width:100%;height:230px;object-fit:cover;border:1px solid var(--gold);padding:6px}
+.about-grid{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.about-grid > div{flex:1 1 160px;min-width:150px}
+.about-img{
+  flex:0 0 clamp(140px,42vw,220px);
+  width:clamp(140px,42vw,220px);height:clamp(140px,42vw,220px);
+  object-fit:cover;border:1px solid var(--gold);padding:5px;
+}
 @media(min-width:900px){
-  .about-grid{grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-  .about-img{height:480px;padding:8px}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-img{width:100%;height:480px;padding:8px}
 }
 .text{color:var(--muted);line-height:1.8;margin-top:14px;font-size:13.5px}
 
@@ -303,9 +312,17 @@ textarea{height:104px;resize:vertical}
 .price small{display:block;color:var(--muted);font-size:6.8px}
 .price b{font-size:11px}
 .item .btn{display:flex;margin-top:7px;padding:7px;font-size:9px;border-radius:4px;min-height:32px}
-.unlimited{margin-top:30px;border:1px solid var(--gold);padding:22px 14px;text-align:center;background:rgba(224,182,61,.05);border-radius:10px}
-.unlimited h2{font-family:"Cormorant Garamond";font-size:22px}
-.unlimited strong{font-size:28px;color:var(--gold2);display:block;margin:8px 0}
+.unlimited{
+  position:relative;margin-top:30px;padding:28px 16px 22px;text-align:center;border-radius:14px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2) 60%,var(--gold));
+  box-shadow:0 8px 28px rgba(224,182,61,.35);
+  border:2px solid var(--gold2);
+}
+.unlimited .label{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--g);color:var(--gold2);padding:4px 14px;border-radius:99px;border:1px solid var(--gold);font-size:9.5px}
+.unlimited h2{font-family:"Cormorant Garamond";font-size:24px;color:var(--g);margin-top:6px}
+.unlimited strong{font-size:32px;color:var(--g);display:block;margin:6px 0;font-weight:800}
+.unlimited .btn.primary{background:var(--g);color:var(--gold2)}
+.unlimited .btn.primary:hover{background:#0d3b29}
 @media(min-width:480px){.menu-grid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:700px){
   .menu-grid{grid-template-columns:repeat(3,1fr)}
@@ -414,7 +431,7 @@ textarea{height:104px;resize:vertical}
 
     </div>
 
-    <h2 class="category">DOSA</h2>
+    <h2 class="category">DOSAS</h2>
     <div class="menu-grid">
 
       <article class="item">
@@ -569,10 +586,10 @@ textarea{height:104px;resize:vertical}
     </div>
 
     <div class="unlimited">
-      <div class="label">SPECIAL</div>
+      <div class="label">🔥 LIMITED SPECIAL</div>
       <h2>1 PERSON • UNLIMITED</h2>
       <strong>₹150/-</strong>
-      <a class="btn primary" style="display:inline-flex;width:auto;padding:12px 26px" href="order.html?item=1%20PERSON%20UNLIMITED">ORDER NOW</a>
+      <a class="btn primary" style="padding:12px 26px;min-height:42px" href="order.html?item=1%20PERSON%20UNLIMITED">ORDER NOW →</a>
     </div>
 
   </div>
