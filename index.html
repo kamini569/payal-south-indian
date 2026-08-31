@@ -46,7 +46,7 @@ button{font-family:inherit}
 
 /* ============ NAVBAR ============ */
 .navbar{
-  position:sticky;top:0;z-index:1000;
+  position:sticky;top:0;z-index:1002; /* must stay above .nav-overlay or the drawer's links become unclickable */
   background:rgba(3,27,19,.96);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(224,182,61,.3);
@@ -67,14 +67,16 @@ button{font-family:inherit}
 
 /* mobile nav = slide-in drawer */
 .nav-links{
-  position:fixed;top:0;right:-85%;height:100dvh;width:min(80%,320px);
+  position:fixed;top:0;right:0;height:100dvh;width:min(80%,320px);
+  transform:translateX(105%);
   background:linear-gradient(180deg,#052015,#031b13);
   border-left:1px solid rgba(224,182,61,.35);
   list-style:none;display:flex;flex-direction:column;
   padding:calc(var(--nav-h) + 24px) 26px 30px;gap:2px;
-  transition:right .35s ease;z-index:1001;overflow-y:auto;
+  transition:transform .3s ease;z-index:1003;overflow-y:auto;
+  pointer-events:none;
 }
-.nav-links.open{right:0}
+.nav-links.open{transform:translateX(0);pointer-events:auto}
 .nav-links a{
   display:block;padding:15px 2px;font-size:14.5px;font-weight:700;
   letter-spacing:.5px;color:#ddd6c5;border-bottom:1px solid rgba(224,182,61,.1);
@@ -87,8 +89,9 @@ button{font-family:inherit}
 .nav-overlay{
   position:fixed;inset:0;background:rgba(0,0,0,.55);
   opacity:0;visibility:hidden;transition:opacity .3s;z-index:1000;
+  pointer-events:none;
 }
-.nav-overlay.open{opacity:1;visibility:visible}
+.nav-overlay.open{opacity:1;visibility:visible;pointer-events:auto}
 
 @media(min-width:900px){
   :root{--nav-h:78px}
@@ -97,7 +100,7 @@ button{font-family:inherit}
   .nav-overlay{display:none}
   .nav-links{
     position:static;height:auto;width:auto;flex-direction:row;align-items:center;
-    background:none;border:0;padding:0;gap:25px;transition:none;
+    background:none;border:0;padding:0;gap:25px;transition:none;transform:none;pointer-events:auto;
   }
   .nav-links a{padding:0;border:0}
   .order-nav{margin-top:0;padding:10px 17px}
@@ -142,18 +145,16 @@ button{font-family:inherit}
 
 /* ============ BUTTONS ============ */
 .btn{
-  display:flex;align-items:center;justify-content:center;gap:6px;
-  padding:14px 20px;border-radius:6px;font-size:12.5px;font-weight:700;
-  letter-spacing:.4px;width:100%;transition:.25s;min-height:44px;
+  display:inline-flex;align-items:center;justify-content:center;gap:5px;
+  padding:9px 15px;border-radius:6px;font-size:10.5px;font-weight:700;
+  letter-spacing:.3px;width:auto;transition:.25s;min-height:36px;white-space:nowrap;
 }
 .primary{background:var(--gold);color:var(--g)}
 .primary:hover{background:var(--gold2)}
 .outline{border:1px solid var(--gold);color:var(--cream)}
 .outline:hover{background:var(--gold);color:var(--g)}
-@media(min-width:600px){.btn{width:auto;display:inline-flex}}
 
-.buttons{display:flex;flex-direction:column;gap:10px;margin-top:24px}
-@media(min-width:600px){.buttons{flex-direction:row;flex-wrap:wrap}}
+.buttons{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;margin-top:20px}
 
 .phones{display:flex;flex-direction:column;gap:8px;margin-top:18px;color:#ddd6c5;font-size:13px}
 @media(min-width:600px){.phones{flex-direction:row;gap:22px}}
@@ -165,11 +166,12 @@ button{font-family:inherit}
 .center{text-align:center}
 
 /* image + text split (about-style) used on home + about pages */
-.about-grid{display:grid;grid-template-columns:1fr;gap:26px}
-.about-img{width:100%;height:230px;object-fit:cover;border:1px solid var(--gold);padding:6px}
+.about-grid{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+.about-grid > div{flex:1 1 160px;min-width:150px}
+.about-img{flex:0 0 108px;width:108px;height:108px;object-fit:cover;border:1px solid var(--gold);padding:4px}
 @media(min-width:900px){
-  .about-grid{grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-  .about-img{height:480px;padding:8px}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-img{width:100%;height:480px;padding:8px}
 }
 .text{color:var(--muted);line-height:1.8;margin-top:14px;font-size:13.5px}
 
